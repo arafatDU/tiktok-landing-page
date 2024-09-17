@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Urbanist } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+// import LeftSidebar from "@/components/LeftSidebar";
+// import { ThemeProvider } from "@/context/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +19,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={urbanist.className}>
+        {/* <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        > */}
+          <div className="min-h-screen bg-white dark:bg-black">
+            <Navbar />
+            <main className="relative pt-[60px]  lg:pt-[70px] flex items-center w-[100vw] max-w-full justify-between">
+              {/* <LeftSidebar /> */}
+              <div className="flex-1">{children}</div>
+            </main>
+          </div>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );
