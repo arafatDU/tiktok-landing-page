@@ -1,5 +1,5 @@
 import MainContent from "@/components/MainContent";
-// import RightSidebar from "@/components/RightSidebar";
+import RightSidebar from "@/components/RightSidebar";
 import {
   Carousel,
   CarouselContent,
@@ -37,13 +37,13 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                {/* <RightSidebar
+                <RightSidebar
                   fullname={post.fullname}
                   pics={post.pics as string}
                   username={post.username}
                   caption={post.caption}
                   comments={post.comments}
-                /> */}
+                />
               </div>
             </CarouselItem>
           ))}
