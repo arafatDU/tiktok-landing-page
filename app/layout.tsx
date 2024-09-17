@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-// import LeftSidebar from "@/components/LeftSidebar";
+import LeftSidebar from "@/components/LeftSidebar";
 import { ThemeProvider } from "@/context/theme-provider";
 
 const urbanist = Urbanist({ subsets: ["latin"] });
@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="min-h-screen bg-white dark:bg-black">
             <Navbar />
             <main className="relative pt-[60px]  lg:pt-[70px] flex items-center w-[100vw] max-w-full justify-between">
-              {/* <LeftSidebar /> */}
+              <LeftSidebar />
               <div className="flex-1">{children}</div>
             </main>
           </div>
